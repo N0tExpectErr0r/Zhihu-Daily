@@ -1,0 +1,84 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+
+
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    resourcePrefix "base_"
+
+    sourceSets{
+        main{
+            manifest.srcFile '../base/src/main/AndroidManifest.xml'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+}
+
+greendao {
+    schemaVersion = 1
+    daoPackage "com.n0texpecterr0r.bean.generated"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Support
+    implementation "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
+    // ARouter
+    implementation "com.alibaba:arouter-api:${AROUTER_VERSION}"
+    annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
+    // EventBus
+    implementation "org.greenrobot:eventbus:${EVENTBUS_VERSION}"
+    // GreenDao
+    implementation "org.greenrobot:greendao:${GREENDAO_VERSION}"
+    // Gson
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+    // Rx
+    implementation "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION}"
+    implementation "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION}"
+    // AutoDispose
+    implementation "com.uber.autodispose:autodispose:${AUTODISPOSE_VERSION}"
+    implementation "com.uber.autodispose:autodispose-android-archcomponents:${AUTODISPOSE_VERSION}"
+    // Glide
+    implementation "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
+    implementation "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
