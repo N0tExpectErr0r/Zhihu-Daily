@@ -27,5 +27,7 @@ ext{
 
     AUTODISPOSE_VERSION = "0.8.0"
 
+    FLYCO_TAB_VERSION = "2.1.2"
+
     GLIDE_VERSION = "4.8.0"
 }

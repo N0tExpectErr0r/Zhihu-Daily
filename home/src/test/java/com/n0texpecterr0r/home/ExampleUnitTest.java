@@ -1,4 +1,4 @@
-package com.n0texpecterr0r.gankio;
+package com.n0texpecterr0r.home;
 
 import org.junit.Test;
 

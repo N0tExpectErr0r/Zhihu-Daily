@@ -6,12 +6,12 @@ import android.os.Bundle;
 
 
 /**
- * GankIO中所有Activity的基类
+ * 知乎日报中所有Activity的基类
  *
  * @author N0tExpectErr0r
  * @time 2018/11/24
  */
-public abstract class GankBaseActivity extends BaseActivity{
+public abstract class DailyBaseActivity extends BaseActivity{
     private AlertDialog mLoadingDialog;
 
     protected void showLoading(String msg){

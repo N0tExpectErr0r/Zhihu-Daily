@@ -33,13 +33,13 @@ android {
         }
     }
 
-    resourcePrefix "base_"
-
     sourceSets{
         main{
             manifest.srcFile '../base/src/main/AndroidManifest.xml'
         }
+        resourcePrefix "base_"
     }
+
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
@@ -77,6 +77,8 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
     implementation "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
     implementation "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
+    // FlycoTabLayout
+    implementation "com.flyco.tablayout:FlycoTabLayout_Lib:${FLYCO_TAB_VERSION}@aar"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

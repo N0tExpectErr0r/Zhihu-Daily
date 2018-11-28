@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/GankIO.iml" filepath="$PROJECT_DIR$/GankIO.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/home/home.iml" filepath="$PROJECT_DIR$/home/home.iml" />
     </modules>
   </component>
 </project>

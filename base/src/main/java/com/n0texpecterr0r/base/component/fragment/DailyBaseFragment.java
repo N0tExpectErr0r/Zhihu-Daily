@@ -7,12 +7,12 @@ import android.os.Bundle;
 import com.n0texpecterr0r.base.component.activity.BaseActivity;
 
 /**
- * GankIO中所有Fragment的基类
+ * 知乎日报中所有Fragment的基类
  *
  * @author N0tExpectErr0r
  * @time 2018/11/24
  */
-public abstract class GankBaseFragment extends BaseFragment{
+public abstract class DailyBaseFragment extends BaseFragment{
     private AlertDialog mLoadingDialog;
 
     protected void showLoading(String msg){

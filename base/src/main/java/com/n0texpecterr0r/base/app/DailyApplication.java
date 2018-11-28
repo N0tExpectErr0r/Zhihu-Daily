@@ -8,12 +8,12 @@ import com.n0texpecterr0r.base.image.ImageLoader;
 import com.n0texpecterr0r.base.image.engines.GlideEngine;
 
 /**
- * GankIO全局的Application
+ * 知乎日报全局的Application
  *
  * @author N0tExpectErr0r
  * @time 2018/11/24
  */
-public class GankApplication extends Application {
+public class DailyApplication extends Application {
     private static Context sContext;
     private boolean isDebug = true;
 

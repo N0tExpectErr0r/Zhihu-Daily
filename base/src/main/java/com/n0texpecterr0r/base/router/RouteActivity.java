@@ -11,8 +11,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
  * @time 2018/11/24
  */
 public class RouteActivity {
-
-    private static void routeTo(String path){
+    public static void routeTo(String path){
         ARouter.getInstance().build(path).navigation();
     }
 }

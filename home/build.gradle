@@ -1,14 +1,18 @@
-apply plugin: 'com.android.application'
+if(isSingleBuild.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId "com.n0texpecterr0r.zhihu_daily"
         minSdkVersion MIN_SDK_VERSION
         targetSdkVersion TARGET_SDK_VERSION
         versionCode VERSION_CODE
         versionName VERSION_NAME
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -18,10 +22,6 @@ android {
         }
     }
 
-    compileOptions{
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 
     buildTypes {
         release {
@@ -30,21 +30,37 @@ android {
         }
     }
 
-    resourcePrefix "app_"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    resourcePrefix "home_"
+
+    sourceSets{
+        main{
+            if(isSingleBuild) {
+                manifest.srcFile '../home/src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile '../app/src/main/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
+    implementation "com.android.support:design:${SUPPORT_LIB_VERSION}"
+    implementation "com.android.support:cardview-v7:${SUPPORT_LIB_VERSION}"
     implementation "com.alibaba:arouter-api:${AROUTER_VERSION}"
+    implementation "com.flyco.tablayout:FlycoTabLayout_Lib:${FLYCO_TAB_VERSION}@aar"
     annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation project(':base')
-    // 组合编译才引入子模块
-    if (!isSingleBuild.toBoolean()) {
-        implementation project(":home")
-    }
+
 }

@@ -1,4 +1,4 @@
-package com.n0texpecterr0r.base.component.fragment;
+package com.n0texpecterr0r.base.component.activity;
 
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleRegistry;
@@ -7,12 +7,12 @@ import android.os.Bundle;
 import com.n0texpecterr0r.base.component.mvp.BaseContract;
 
 /**
- * GankIO的MvpFragment
+ * 知乎日报的MvpActivity
  *
  * @author N0tExpectErr0r
  * @time 2018/11/24
  */
-public abstract class GankMvpFragment<P extends BaseContract.Presenter> extends GankBaseFragment implements BaseContract.View{
+public abstract class DailyMvpActivity<P extends BaseContract.Presenter> extends DailyBaseActivity implements BaseContract.View{
     protected P mPresenter;
     private Lifecycle mLifecycle;
 
@@ -29,12 +29,11 @@ public abstract class GankMvpFragment<P extends BaseContract.Presenter> extends 
         return mLifecycle;
     }
 
-    abstract protected void init(P presenter, Bundle saveInstanceState);
+    abstract protected void init(P presenter, Bundle savedInstanceState);
 
     protected abstract P onCreatePresenter();
 
-    public P getPresenter() {
+    final public P getPresenter() {
         return mPresenter;
     }
-
 }

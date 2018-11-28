@@ -1,4 +1,4 @@
-package com.n0texpecterr0r.gankio;
+package com.n0texpecterr0r.zhihu_daily;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.n0texpecterr0r.gankio", appContext.getPackageName());
+        assertEquals("com.n0texpecterr0r.zhihu_daily", appContext.getPackageName());
     }
 }
