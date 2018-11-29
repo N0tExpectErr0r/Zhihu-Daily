@@ -46,5 +46,6 @@ dependencies {
     // 组合编译才引入子模块
     if (!isSingleBuild.toBoolean()) {
         implementation project(":home")
+        implementation project(":daily")
     }
 }

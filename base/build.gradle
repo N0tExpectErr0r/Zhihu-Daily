@@ -56,6 +56,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // Support
     implementation "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
+    implementation "com.android.support:recyclerview-v7:${SUPPORT_LIB_VERSION}"
     // ARouter
     implementation "com.alibaba:arouter-api:${AROUTER_VERSION}"
     annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"

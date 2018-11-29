@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -14,6 +15,7 @@ import com.n0texpecterr0r.base.adapter.CommonPagerAdapter;
 import com.n0texpecterr0r.base.bean.CommonTabBean;
 import com.n0texpecterr0r.base.component.activity.DailyBaseActivity;
 import com.n0texpecterr0r.base.router.RouterConstant;
+import com.n0texpecterr0r.zhihu_daily.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +74,10 @@ public class HomeMainActivity extends DailyBaseActivity {
 
     private List<Fragment> getFragmentList() {
         List<Fragment> fragmentList = new ArrayList<>();
+        Fragment fragment = (Fragment) ARouter.getInstance()
+                .build(RouterConstant.FRAGMENT_DAILY_LIST)
+                .navigation();
+        fragmentList.add(fragment);
         return fragmentList;
     }
 

@@ -8,4 +8,5 @@ package com.n0texpecterr0r.base.router;
  */
 public class RouterConstant {
     public static final String ACTIVITY_HOME_MAIN = "/home/main";
+    public static final String FRAGMENT_DAILY_LIST = "/daily/list";
 }

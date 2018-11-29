@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.n0texpecterr0r.base.component.activity.DailyBaseActivity;
-import com.n0texpecterr0r.base.router.RouteActivity;
 import com.n0texpecterr0r.base.router.RouterConstant;
 
 /**
@@ -23,5 +22,6 @@ public class LauncherActivity extends DailyBaseActivity {
     @Override
     protected void init(Bundle savedInstanceState) {
         ARouter.getInstance().build(RouterConstant.ACTIVITY_HOME_MAIN).navigation();
+        finish();
     }
 }

@@ -1,6 +1,8 @@
 package com.n0texpecterr0r.base.component.fragment;
 
 
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.LifecycleRegistry;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -69,6 +71,11 @@ public class BaseLazyFragment extends Fragment {
         if (contentView != null)
             return contentView.findViewById(id);
         return null;
+    }
+
+    @Override
+    public Lifecycle getLifecycle() {
+        return new LifecycleRegistry(this);
     }
 
     // http://stackoverflow.com/questions/15207305/getting-the-error-java-lang-illegalstateexception-activity-has-been-destroyed

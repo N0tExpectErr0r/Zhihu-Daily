@@ -4,6 +4,7 @@ import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LifecycleOwner;
 import android.content.Context;
+import android.util.Log;
 
 import com.n0texpecterr0r.base.component.lifecycle.AutoDisposer;
 import com.n0texpecterr0r.base.component.lifecycle.LifecycleFullObserver;
@@ -13,6 +14,8 @@ import com.uber.autodispose.ObservableSubscribeProxy;
 import java.lang.ref.WeakReference;
 
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Mvp契约类，基于Lifecycle
@@ -46,7 +49,6 @@ public interface BaseContract {
             view.getLifecycle().addObserver(this);
             this.view = new WeakReference<>(view);
         }
-
 
         protected <T> AutoDisposeConverter<T> bindLifecycle() {
             return AutoDisposer.bind(view.get());
@@ -121,10 +123,5 @@ public interface BaseContract {
 
     interface Repository {
 
-        interface RomoteSource {
-        }
-
-        interface LocalSource {
-        }
     }
 }

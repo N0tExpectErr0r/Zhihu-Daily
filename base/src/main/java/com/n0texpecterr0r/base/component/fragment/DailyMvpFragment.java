@@ -18,9 +18,8 @@ public abstract class DailyMvpFragment<P extends BaseContract.Presenter> extends
 
     @Override
     final protected void init(Bundle savedInstanceState) {
-        mPresenter = onCreatePresenter();
         mLifecycle = new LifecycleRegistry(this);
-        mLifecycle.addObserver(mPresenter);
+        mPresenter = onCreatePresenter();
         init(mPresenter, savedInstanceState);
     }
 

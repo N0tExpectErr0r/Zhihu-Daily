@@ -22,7 +22,6 @@ android {
         }
     }
 
-
     buildTypes {
         release {
             minifyEnabled false
@@ -35,12 +34,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    resourcePrefix "home_"
+    resourcePrefix "daily_"
 
     sourceSets{
         main{
             if(isSingleBuild.toBoolean()) {
-                manifest.srcFile '../home/src/main/AndroidManifest.xml'
+                manifest.srcFile '../daily/src/main/AndroidManifest.xml'
             } else {
                 manifest.srcFile '../app/src/main/AndroidManifest.xml'
             }
@@ -54,13 +53,16 @@ dependencies {
     implementation "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
     implementation "com.android.support:design:${SUPPORT_LIB_VERSION}"
     implementation "com.android.support:cardview-v7:${SUPPORT_LIB_VERSION}"
+    implementation "com.squareup.okhttp3:okhttp:${OKHTTP_VERSION}"
+    implementation "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION}"
+    implementation "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION}"
+    implementation "com.uber.autodispose:autodispose:${AUTODISPOSE_VERSION}"
+    implementation "com.uber.autodispose:autodispose-android-archcomponents:${AUTODISPOSE_VERSION}"
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
     implementation "com.alibaba:arouter-api:${AROUTER_VERSION}"
-    implementation "com.flyco.tablayout:FlycoTabLayout_Lib:${FLYCO_TAB_VERSION}@aar"
     annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-    implementation project(':base')
-
+    implementation project(path: ':base')
 }
