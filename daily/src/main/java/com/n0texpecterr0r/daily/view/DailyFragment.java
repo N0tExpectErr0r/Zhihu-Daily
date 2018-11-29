@@ -4,17 +4,14 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.n0texpecterr0r.base.component.fragment.DailyBaseFragment;
 import com.n0texpecterr0r.base.component.fragment.DailyMvpFragment;
 import com.n0texpecterr0r.base.router.RouterConstant;
-import com.n0texpecterr0r.base.util.ToastUtil;
 import com.n0texpecterr0r.base.view.BannerView;
 import com.n0texpecterr0r.base.view.OnMoreScrollListener;
-import com.n0texpecterr0r.daily.DailyAdapter;
+import com.n0texpecterr0r.daily.adapter.DailyAdapter;
 import com.n0texpecterr0r.daily.DailyContract;
 import com.n0texpecterr0r.daily.bean.StoryBean;
 import com.n0texpecterr0r.daily.bean.TopStoryBean;

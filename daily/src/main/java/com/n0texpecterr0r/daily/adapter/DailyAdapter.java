@@ -1,4 +1,4 @@
-package com.n0texpecterr0r.daily;
+package com.n0texpecterr0r.daily.adapter;
 
 import android.widget.ImageView;
 
