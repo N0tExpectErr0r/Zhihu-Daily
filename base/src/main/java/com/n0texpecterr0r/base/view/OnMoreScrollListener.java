@@ -33,12 +33,11 @@ public abstract class OnMoreScrollListener extends RecyclerView.OnScrollListener
             int lastCompletelyVisibleItemPosition = ((LinearLayoutManager) manager)
                     .findLastCompletelyVisibleItemPosition();
 
-            if (lastCompletelyVisibleItemPosition == adapter.getItemCount() - 1) {
+            if (lastCompletelyVisibleItemPosition == adapter.getItemCount() - 1 && adapter.hasMore()) {
                 onLoadMore();
             }
         }
     }
-
 
     protected abstract void onLoadMore();
 }

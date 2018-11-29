@@ -7,7 +7,7 @@
         android:allowBackup="true"
         android:name="com.n0texpecterr0r.base.app.DailyApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/home_app_name"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

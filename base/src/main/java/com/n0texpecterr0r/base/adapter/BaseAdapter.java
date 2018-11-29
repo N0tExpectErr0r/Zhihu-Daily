@@ -117,6 +117,10 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter implements Vie
         }
     }
 
+    public boolean hasMore() {
+        return mHasMore;
+    }
+
     @Override
     public void onClick(View v) {
         if (mOnItemClickListener != null) {
