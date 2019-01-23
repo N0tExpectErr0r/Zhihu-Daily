@@ -16,9 +16,12 @@ public abstract class DailyMvpFragment<P extends BaseContract.Presenter> extends
     protected P mPresenter;
     private Lifecycle mLifecycle;
 
+    public DailyMvpFragment(){
+        mLifecycle = new LifecycleRegistry(this);
+    }
+
     @Override
     final protected void init(Bundle savedInstanceState) {
-        mLifecycle = new LifecycleRegistry(this);
         mPresenter = onCreatePresenter();
         init(mPresenter, savedInstanceState);
     }

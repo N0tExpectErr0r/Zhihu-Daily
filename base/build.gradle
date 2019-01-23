@@ -55,31 +55,31 @@ greendao {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // Support
-    implementation "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
-    implementation "com.android.support:recyclerview-v7:${SUPPORT_LIB_VERSION}"
+    api "com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}"
+    api "com.android.support:recyclerview-v7:${SUPPORT_LIB_VERSION}"
     // ARouter
-    implementation "com.alibaba:arouter-api:${AROUTER_VERSION}"
+    api "com.alibaba:arouter-api:${AROUTER_VERSION}"
     annotationProcessor "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
     // EventBus
-    implementation "org.greenrobot:eventbus:${EVENTBUS_VERSION}"
+    api "org.greenrobot:eventbus:${EVENTBUS_VERSION}"
     // GreenDao
-    implementation "org.greenrobot:greendao:${GREENDAO_VERSION}"
+    api "org.greenrobot:greendao:${GREENDAO_VERSION}"
     // Gson
-    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+    api "com.google.code.gson:gson:${GSON_VERSION}"
     // Rx
-    implementation "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION}"
-    implementation "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION}"
+    api "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION}"
+    api "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION}"
     // AutoDispose
-    implementation "com.uber.autodispose:autodispose:${AUTODISPOSE_VERSION}"
-    implementation "com.uber.autodispose:autodispose-android-archcomponents:${AUTODISPOSE_VERSION}"
+    api "com.uber.autodispose:autodispose:${AUTODISPOSE_VERSION}"
+    api "com.uber.autodispose:autodispose-android-archcomponents:${AUTODISPOSE_VERSION}"
     // Glide
-    implementation "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+    api "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
     // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
-    implementation "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
+    api "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+    api "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
+    api "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
     // FlycoTabLayout
-    implementation "com.flyco.tablayout:FlycoTabLayout_Lib:${FLYCO_TAB_VERSION}@aar"
+    api "com.flyco.tablayout:FlycoTabLayout_Lib:${FLYCO_TAB_VERSION}@aar"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
